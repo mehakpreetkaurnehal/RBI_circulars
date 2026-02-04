@@ -1,0 +1,17 @@
+requests
+beautifulsoup4
+sqlalchemy
+pandas
+selenium
+webdriver-manager
+PyMuPDF4LLM
+
+sentence-transformers
+faiss-cpu 
+rank_bm25
+nltk
+
+google-generativeai
+
+streamlit
+
