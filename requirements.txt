@@ -15,3 +15,7 @@ google-generativeai
 
 streamlit
 
+python-dotenv
+
+numpy
+tqdm

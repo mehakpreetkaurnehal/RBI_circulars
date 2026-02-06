@@ -7,9 +7,12 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 
 
-DB_PATH = "scrape_rbi_pdf_and_ext.db"
+# DB_PATH = "scrape_rbi_pdf_and_ext.db" 
+DB_PATH = "rbi_scrape_text.db"
 
-FAISS_DIR = "rbi_faiss_store"
+# FAISS_DIR = "rbi_faiss_store"
+
+FAISS_DIR = "rbi_scrape_text"
 os.makedirs(FAISS_DIR, exist_ok=True)
 
 FAISS_INDEX_PATH = os.path.join(FAISS_DIR, "rbi_chunks.index")

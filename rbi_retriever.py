@@ -3,7 +3,9 @@ import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-FAISS_DIR = "rbi_faiss_store"
+# FAISS_DIR = "rbi_faiss_store"
+FAISS_DIR = "rbi_scrape_text"
+
 FAISS_INDEX_PATH = f"{FAISS_DIR}/rbi_chunks.index"
 CHUNK_META_PATH = f"{FAISS_DIR}/rbi_chunk_metadata.json"
 
