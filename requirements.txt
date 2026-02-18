@@ -19,3 +19,8 @@ python-dotenv
 
 numpy
 tqdm
+fastapi
+
+uvicorn
+
+npm

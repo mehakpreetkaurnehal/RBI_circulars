@@ -1,0 +1,153 @@
+TEST GROUP 1 — Case Sensitivity
+
+Liquidity Coverage Ratio
+liquidity coverage ratio
+LIQUIDITY COVERAGE RATIO
+Liquidity coverage ratio
+liQuidIty CoVerage Ratio
+
+
+TEST GROUP 2 — Punctuation Robustness
+
+liquidity coverage ratio?
+liquidity coverage ratio.
+liquidity coverage ratio,
+liquidity coverage ratio!
+(liquidity coverage ratio)
+"liquidity coverage ratio"
+
+
+TEST GROUP 3 — Extra Spaces (VERY IMPORTANT)
+
+liquidity    coverage    ratio
+ liquidity coverage ratio
+liquidity coverage ratio 
+  liquidity coverage ratio  
+
+
+TEST GROUP 4 — Multi-word Phrase Integrity ⭐ (CRITICAL)
+
+
+- Primary test
+liquidity coverage ratio
+
+
+- Distractor tests (should NOT drift)
+liquidity ratio
+coverage ratio
+liquidity coverage
+ratio liquidity
+
+
+TEST GROUP 5 — Question Forms vs Keyword Forms
+
+What is liquidity coverage ratio
+Explain liquidity coverage ratio
+Define liquidity coverage ratio
+liquidity coverage ratio meaning
+LCR meaning
+
+
+
+TEST GROUP 6 — Short Queries (EDGE CASE)
+
+LCR
+NSFR
+CRR
+SLR
+
+
+
+TEST GROUP 7 — Noise Injection (REAL USER BEHAVIOR)
+
+what is the liquidity coverage ratio in banks
+tell me about liquidity coverage ratio rules
+liquidity coverage ratio rbi circular
+liquidity coverage ratio requirement india
+
+
+
+
+TEST GROUP 8 — BM25 Bigram A/B Test
+
+- Run with bigrams OFF
+ 
+ liquidity coverage ratio
+
+
+- Run with bigrams ON
+
+
+TEST GROUP 9 — Partial Match Trap (VERY IMPORTANT)
+
+
+
+TEST GROUP 10 — Hard Finance Queries (REALISTIC)
+
+What is the minimum liquidity coverage ratio requirement?
+What LCR percentage must banks maintain?
+Explain RBI guidelines on liquidity coverage ratio.
+How is LCR calculated under Basel III?
+What is Net Stable Funding Ratio?
+
+
+TEST GROUP 11 — Misspelling Robustness (Optional)
+
+liqudity coverage ratio
+liquidity coverge ratio
+liq coverage ratio
+
+
+🔹 Category 1 — Case Sensitivity
+
+| Test Type  | Sample Query             | Expected Without Bigrams     | Expected With Bigrams | Notes               |
+| ---------- | ------------------------ | ------------------------     | --------------------- | ------------------- |
+| lower case | liquidity coverage ratio | ⭐⭐⭐                      | ⭐⭐⭐                   | baseline            |
+| UPPER CASE | LIQUIDITY COVERAGE RATIO | ⭐⭐⭐                      | ⭐⭐⭐                   | normalization fixes |
+| Title Case | Liquidity Coverage Ratio | ⭐⭐⭐                      | ⭐⭐⭐                   | should match        |
+| Mixed Case | Liquidity coverage RATIO | ⭐⭐⭐                      | ⭐⭐⭐                   | tests robustness    |
+
+
+
+🔹 Category 2 — Punctuation Robustness
+
+| Test Type          | Sample Query                   | Without Bigrams | With Bigrams | Notes               |
+| ------------------ | ------------------------------ | --------------- | ------------ | ------------------- |
+| with question mark | liquidity coverage ratio?      | ⭐⭐           | ⭐⭐⭐          | normalization helps |
+| with period        | liquidity coverage ratio.      | ⭐⭐           | ⭐⭐⭐          |                     |
+| with comma         | liquidity coverage, ratio      | ⭐⭐           | ⭐⭐⭐          |                     |
+| extra punctuation  | liquidity!!! coverage??? ratio | ⭐⭐           | ⭐⭐⭐          | stress test         |
+| no punctuation     | liquidity coverage ratio       | ⭐⭐⭐         | ⭐⭐⭐          | baseline            |
+
+
+🔹 Category 3 — Phrase Integrity (VERY IMPORTANT)
+
+| Test Type       | Query                                | Without Bigrams    | With Bigrams      | Notes             |
+| --------------- | ------------------------------------ | ---------------    | ------------      | ----------------- |
+| exact phrase    | liquidity coverage ratio             | ⭐⭐              | ⭐⭐⭐           | bigrams help      |
+| reordered words | ratio liquidity coverage             | ⭐⭐              | ⭐⭐             | semantic helps    |
+| partial phrase  | liquidity ratio                      | ⭐⭐              | ⭐⭐             |                   |
+| long phrase     | net stable funding ratio requirement | ⭐⭐              | ⭐⭐⭐           | BIG gain          |
+| finance acronym | LCR requirements                     | ⭐⭐⭐            | ⭐⭐⭐          | embedding handles |
+
+
+🔹 Category 4 — Short Queries (Your Key Concern)
+
+| Test Type      | Query                    | Without Bigrams    | With Bigrams | Notes     |
+| -------------- | ------------------------ | ---------------    | ------------ | --------- |
+| 2-word         | liquidity ratio          | ⭐⭐              | ⭐⭐        |           |
+| 3-word phrase  | liquidity coverage ratio | ⭐⭐              | ⭐⭐⭐      | important |
+| acronym only   | LCR                      | ⭐⭐⭐            | ⭐⭐⭐     |           |
+| acronym + word | LCR requirement          | ⭐⭐⭐            | ⭐⭐⭐     |           |
+| single word    | liquidity                | ⭐⭐              | ⭐⭐        | expected  |
+
+
+🔹 Category 5 — Noise / User Behavior
+
+| Test Type               | Query                                                      | Without Bigrams      | With Bigrams     | Notes             |
+| ----------------------- | ---------------------------------------------------------- | ---------------      | ------------     | ----------------- |
+| extra spaces            | liquidity   coverage   ratio                               | ⭐⭐⭐             | ⭐⭐⭐          | normalized        |
+| leading/trailing spaces | "  liquidity coverage ratio  "                             | ⭐⭐⭐             | ⭐⭐⭐          |                   |
+| spelling variation      | liquidity coverage ratios                                  | ⭐⭐               | ⭐⭐             | stemming not used |
+| conversational          | what is liquidity coverage ratio                           | ⭐⭐⭐             | ⭐⭐⭐          | semantic helps    |
+| long natural question   | what is the liquidity coverage ratio requirement for banks | ⭐⭐⭐             | ⭐⭐⭐          | reranker helps    |
